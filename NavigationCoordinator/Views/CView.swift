@@ -2,48 +2,34 @@
 //  CView.swift
 //  NavigationCoordinator
 //
-//  Created by 신상원 on 2022/10/06.
+//  Created by 신상원 on 2022/10/07.
 //
 
 import SwiftUI
 
 struct CView: View {
-  @Binding
-  var prevPage: Bool
-  
-  @Binding
-  var backRoot: Bool
-  
-  init(
-    prev: Binding<Bool>,
-    root: Binding<Bool>
-  ) {
-    self._prevPage = prev
-    self._backRoot = root
-  }
+  @EnvironmentObject
+  var navigationHelper: NavigationHelper
   
   var body: some View {
     VStack {
+      Text("TEST")
       Button(
-        action: {
-          self.prevPage = false
-        },
+        action: { navigationHelper.goToB = false },
         label: {
-          Text("Back Prev")
+          Text("GO Back To A")
             .font(.largeTitle)
         }
       )
-      
+
       Button(
-        action: {
-          self.backRoot = false
-        },
+        action: { navigationHelper.goToA = false },
         label: {
-          Text("Back Root")
+          Text("GO Back to B")
             .font(.largeTitle)
         }
       )
     }
+    
   }
-  
 }

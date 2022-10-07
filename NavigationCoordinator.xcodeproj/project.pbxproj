@@ -8,25 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		AE0F4EBD28EEC70B00E95CE4 /* NavigationCoordinatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0F4EBC28EEC70B00E95CE4 /* NavigationCoordinatorApp.swift */; };
-		AE0F4EBF28EEC70B00E95CE4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0F4EBE28EEC70B00E95CE4 /* ContentView.swift */; };
 		AE0F4EC128EEC70D00E95CE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE0F4EC028EEC70D00E95CE4 /* Assets.xcassets */; };
 		AE0F4EC428EEC70D00E95CE4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE0F4EC328EEC70D00E95CE4 /* Preview Assets.xcassets */; };
-		AE0F4ED028EECBC000E95CE4 /* AViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0F4ECF28EECBC000E95CE4 /* AViewModel.swift */; };
-		AE0F4ED228EECF5B00E95CE4 /* AView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0F4ED128EECF5B00E95CE4 /* AView.swift */; };
-		AE0F4ED428EED17900E95CE4 /* BView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0F4ED328EED17900E95CE4 /* BView.swift */; };
-		AE0F4ED628EED19100E95CE4 /* CView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0F4ED528EED19100E95CE4 /* CView.swift */; };
+		AE27BB9B28F0137E0053B2A8 /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = AE27BB9A28F0137E0053B2A8 /* NavigationStack */; };
+		AEC4AB4728EFC9C600A65BB8 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC4AB4628EFC9C600A65BB8 /* NavigationHelper.swift */; };
+		AEC4AB4928EFED5700A65BB8 /* AView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC4AB4828EFED5700A65BB8 /* AView.swift */; };
+		AEC4AB4B28EFEDF700A65BB8 /* BView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC4AB4A28EFEDF700A65BB8 /* BView.swift */; };
+		AEC4AB4D28EFEE1100A65BB8 /* CView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC4AB4C28EFEE1100A65BB8 /* CView.swift */; };
+		AEC4AB4F28F00ECD00A65BB8 /* CustomNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC4AB4E28F00ECD00A65BB8 /* CustomNavigationStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AE0F4EB928EEC70B00E95CE4 /* NavigationCoordinator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationCoordinator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE0F4EBC28EEC70B00E95CE4 /* NavigationCoordinatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinatorApp.swift; sourceTree = "<group>"; };
-		AE0F4EBE28EEC70B00E95CE4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AE0F4EC028EEC70D00E95CE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE0F4EC328EEC70D00E95CE4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		AE0F4ECF28EECBC000E95CE4 /* AViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AViewModel.swift; sourceTree = "<group>"; };
-		AE0F4ED128EECF5B00E95CE4 /* AView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AView.swift; sourceTree = "<group>"; };
-		AE0F4ED328EED17900E95CE4 /* BView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BView.swift; sourceTree = "<group>"; };
-		AE0F4ED528EED19100E95CE4 /* CView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CView.swift; sourceTree = "<group>"; };
+		AEC4AB4628EFC9C600A65BB8 /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
+		AEC4AB4828EFED5700A65BB8 /* AView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AView.swift; sourceTree = "<group>"; };
+		AEC4AB4A28EFEDF700A65BB8 /* BView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BView.swift; sourceTree = "<group>"; };
+		AEC4AB4C28EFEE1100A65BB8 /* CView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CView.swift; sourceTree = "<group>"; };
+		AEC4AB4E28F00ECD00A65BB8 /* CustomNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE27BB9B28F0137E0053B2A8 /* NavigationStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,9 +61,10 @@
 		AE0F4EBB28EEC70B00E95CE4 /* NavigationCoordinator */ = {
 			isa = PBXGroup;
 			children = (
-				AE0F4ECA28EEC72600E95CE4 /* Views */,
 				AE0F4EBC28EEC70B00E95CE4 /* NavigationCoordinatorApp.swift */,
-				AE0F4ECF28EECBC000E95CE4 /* AViewModel.swift */,
+				AEC4AB4628EFC9C600A65BB8 /* NavigationHelper.swift */,
+				AEC4AB4E28F00ECD00A65BB8 /* CustomNavigationStack.swift */,
+				AE0F4ECA28EEC72600E95CE4 /* Views */,
 				AE0F4EC028EEC70D00E95CE4 /* Assets.xcassets */,
 				AE0F4EC228EEC70D00E95CE4 /* Preview Content */,
 			);
@@ -79,10 +82,9 @@
 		AE0F4ECA28EEC72600E95CE4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AE0F4EBE28EEC70B00E95CE4 /* ContentView.swift */,
-				AE0F4ED128EECF5B00E95CE4 /* AView.swift */,
-				AE0F4ED328EED17900E95CE4 /* BView.swift */,
-				AE0F4ED528EED19100E95CE4 /* CView.swift */,
+				AEC4AB4828EFED5700A65BB8 /* AView.swift */,
+				AEC4AB4A28EFEDF700A65BB8 /* BView.swift */,
+				AEC4AB4C28EFEE1100A65BB8 /* CView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -103,6 +105,9 @@
 			dependencies = (
 			);
 			name = NavigationCoordinator;
+			packageProductDependencies = (
+				AE27BB9A28F0137E0053B2A8 /* NavigationStack */,
+			);
 			productName = NavigationCoordinator;
 			productReference = AE0F4EB928EEC70B00E95CE4 /* NavigationCoordinator.app */;
 			productType = "com.apple.product-type.application";
@@ -131,6 +136,9 @@
 				Base,
 			);
 			mainGroup = AE0F4EB028EEC70B00E95CE4;
+			packageReferences = (
+				AE27BB9928F0137E0053B2A8 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */,
+			);
 			productRefGroup = AE0F4EBA28EEC70B00E95CE4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -157,12 +165,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE0F4ED028EECBC000E95CE4 /* AViewModel.swift in Sources */,
-				AE0F4ED428EED17900E95CE4 /* BView.swift in Sources */,
-				AE0F4EBF28EEC70B00E95CE4 /* ContentView.swift in Sources */,
-				AE0F4ED228EECF5B00E95CE4 /* AView.swift in Sources */,
-				AE0F4ED628EED19100E95CE4 /* CView.swift in Sources */,
+				AEC4AB4928EFED5700A65BB8 /* AView.swift in Sources */,
+				AEC4AB4728EFC9C600A65BB8 /* NavigationHelper.swift in Sources */,
 				AE0F4EBD28EEC70B00E95CE4 /* NavigationCoordinatorApp.swift in Sources */,
+				AEC4AB4D28EFEE1100A65BB8 /* CView.swift in Sources */,
+				AEC4AB4B28EFEDF700A65BB8 /* BView.swift in Sources */,
+				AEC4AB4F28F00ECD00A65BB8 /* CustomNavigationStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +379,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AE27BB9928F0137E0053B2A8 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/matteopuc/swiftui-navigation-stack.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AE27BB9A28F0137E0053B2A8 /* NavigationStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE27BB9928F0137E0053B2A8 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */;
+			productName = NavigationStack;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AE0F4EB128EEC70B00E95CE4 /* Project object */;
 }

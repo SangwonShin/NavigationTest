@@ -2,47 +2,48 @@
 //  AView.swift
 //  NavigationCoordinator
 //
-//  Created by 신상원 on 2022/10/06.
+//  Created by 신상원 on 2022/10/07.
 //
 
 import SwiftUI
 
+import NavigationStack
+
+struct RootView: View {
+  var body: some View {
+    NavigationStackView {
+      AView()
+    }
+  }
+}
+
 struct AView: View {
   @State
-  var aViewNext: Bool = false
+  var goToNextView: Bool = false
   
-  @Binding
-  var prevPage: Bool
-  
-  init(_ prev: Binding<Bool>) {
-    self._prevPage = prev
-  }
+  @EnvironmentObject
+  var navigationHelper: NavigationHelper
   
   var body: some View {
+    
+  NavigationView {
     VStack {
       NavigationLink(
-        isActive: $aViewNext,
-        destination: {
-//          BView($aViewNext)
-          CView(
-            prev: $aViewNext,
-            root: $prevPage
-          )
+        isActive: $navigationHelper.goToA,
+        destination: { BView() },
+        label: { EmptyView() }
+      )
+      
+      Button(
+        action: {
+          navigationHelper.goToA = true
         },
-        label: { }
-      )
-      
-      Button(
-        action: { self.aViewNext = true },
         label: {
-          Text("Go Next")
+          Text("GO TO B")
+            .font(.largeTitle)
         }
-      )
-      
-      Button(
-        action: { self.prevPage = false },
-        label: { Text("Back") }
       )
     }
   }
+}
 }
