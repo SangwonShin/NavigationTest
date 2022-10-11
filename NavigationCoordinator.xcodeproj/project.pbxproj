@@ -7,29 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE0678B828F5471C00839809 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0678B728F5471C00839809 /* ContentView.swift */; };
 		AE0F4EBD28EEC70B00E95CE4 /* NavigationCoordinatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0F4EBC28EEC70B00E95CE4 /* NavigationCoordinatorApp.swift */; };
 		AE0F4EC128EEC70D00E95CE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE0F4EC028EEC70D00E95CE4 /* Assets.xcassets */; };
 		AE0F4EC428EEC70D00E95CE4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE0F4EC328EEC70D00E95CE4 /* Preview Assets.xcassets */; };
-		AE827FD528F4FF470090F0D7 /* DView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE827FD428F4FF470090F0D7 /* DView.swift */; };
-		AE827FDA28F504C10090F0D7 /* NavigationViewKit in Frameworks */ = {isa = PBXBuildFile; productRef = AE827FD928F504C10090F0D7 /* NavigationViewKit */; };
 		AE827FDC28F50C1B0090F0D7 /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE827FDB28F50C1B0090F0D7 /* NavigationLazyView.swift */; };
-		AE827FDE28F515FD0090F0D7 /* EView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE827FDD28F515FD0090F0D7 /* EView.swift */; };
-		AEC4AB4928EFED5700A65BB8 /* AView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC4AB4828EFED5700A65BB8 /* AView.swift */; };
-		AEC4AB4B28EFEDF700A65BB8 /* BView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC4AB4A28EFEDF700A65BB8 /* BView.swift */; };
-		AEC4AB4D28EFEE1100A65BB8 /* CView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC4AB4C28EFEE1100A65BB8 /* CView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE0678B728F5471C00839809 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AE0F4EB928EEC70B00E95CE4 /* NavigationCoordinator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationCoordinator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE0F4EBC28EEC70B00E95CE4 /* NavigationCoordinatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinatorApp.swift; sourceTree = "<group>"; };
 		AE0F4EC028EEC70D00E95CE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE0F4EC328EEC70D00E95CE4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		AE827FD428F4FF470090F0D7 /* DView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DView.swift; sourceTree = "<group>"; };
 		AE827FDB28F50C1B0090F0D7 /* NavigationLazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLazyView.swift; sourceTree = "<group>"; };
-		AE827FDD28F515FD0090F0D7 /* EView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EView.swift; sourceTree = "<group>"; };
-		AEC4AB4828EFED5700A65BB8 /* AView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AView.swift; sourceTree = "<group>"; };
-		AEC4AB4A28EFEDF700A65BB8 /* BView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BView.swift; sourceTree = "<group>"; };
-		AEC4AB4C28EFEE1100A65BB8 /* CView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +28,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE827FDA28F504C10090F0D7 /* NavigationViewKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,11 +73,7 @@
 		AE0F4ECA28EEC72600E95CE4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AEC4AB4828EFED5700A65BB8 /* AView.swift */,
-				AEC4AB4A28EFEDF700A65BB8 /* BView.swift */,
-				AEC4AB4C28EFEE1100A65BB8 /* CView.swift */,
-				AE827FD428F4FF470090F0D7 /* DView.swift */,
-				AE827FDD28F515FD0090F0D7 /* EView.swift */,
+				AE0678B728F5471C00839809 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -109,7 +95,6 @@
 			);
 			name = NavigationCoordinator;
 			packageProductDependencies = (
-				AE827FD928F504C10090F0D7 /* NavigationViewKit */,
 			);
 			productName = NavigationCoordinator;
 			productReference = AE0F4EB928EEC70B00E95CE4 /* NavigationCoordinator.app */;
@@ -140,7 +125,6 @@
 			);
 			mainGroup = AE0F4EB028EEC70B00E95CE4;
 			packageReferences = (
-				AE827FD828F504C10090F0D7 /* XCRemoteSwiftPackageReference "NavigationViewKit" */,
 			);
 			productRefGroup = AE0F4EBA28EEC70B00E95CE4 /* Products */;
 			projectDirPath = "";
@@ -168,12 +152,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEC4AB4928EFED5700A65BB8 /* AView.swift in Sources */,
-				AE827FD528F4FF470090F0D7 /* DView.swift in Sources */,
 				AE0F4EBD28EEC70B00E95CE4 /* NavigationCoordinatorApp.swift in Sources */,
-				AE827FDE28F515FD0090F0D7 /* EView.swift in Sources */,
-				AEC4AB4D28EFEE1100A65BB8 /* CView.swift in Sources */,
-				AEC4AB4B28EFEDF700A65BB8 /* BView.swift in Sources */,
+				AE0678B828F5471C00839809 /* ContentView.swift in Sources */,
 				AE827FDC28F50C1B0090F0D7 /* NavigationLazyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,25 +363,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		AE827FD828F504C10090F0D7 /* XCRemoteSwiftPackageReference "NavigationViewKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/fatbobman/NavigationViewKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.5;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		AE827FD928F504C10090F0D7 /* NavigationViewKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AE827FD828F504C10090F0D7 /* XCRemoteSwiftPackageReference "NavigationViewKit" */;
-			productName = NavigationViewKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AE0F4EB128EEC70B00E95CE4 /* Project object */;
 }
