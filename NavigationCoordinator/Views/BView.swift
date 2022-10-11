@@ -8,35 +8,23 @@
 import SwiftUI
 
 struct BView: View {
-
   @EnvironmentObject
-  var navigationHelper: NavigationHelper
+  var navigationStack: NavigationStack<ViewID>
   
   var body: some View {
     VStack {
-      NavigationLink(
-        isActive: $navigationHelper.goToB,
+      Text("This is B")
+        .font(.largeTitle)
+      
+      navigationStack.navigationLink(
+        customId: ViewID.b,
         destination: { CView() },
-        label: { EmptyView() }
+        label: { Text("GO TO C") }
       )
       
       Button(
-        action: {
-          self.navigationHelper.goToB = true
-//          self.navigationHelper.goToA = true
-        },
-        label: {
-          Text("GO TO C")
-            .font(.largeTitle)
-        }
-      )
-      
-      Button(
-        action: { self.navigationHelper.goToA = false },
-        label: {
-          Text("GO Back A")
-            .font(.largeTitle)
-        }
+        action: { navigationStack.pop() },
+        label: { Text("Pop to Root") }
       )
     }
   }

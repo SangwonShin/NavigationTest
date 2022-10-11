@@ -9,41 +9,18 @@ import SwiftUI
 
 import NavigationStack
 
-struct RootView: View {
-  var body: some View {
-    NavigationStackView {
-      AView()
-    }
-  }
-}
-
 struct AView: View {
-  @State
-  var goToNextView: Bool = false
-  
   @EnvironmentObject
-  var navigationHelper: NavigationHelper
+  var navigationStack: NavigationStack<ViewID>
   
   var body: some View {
-    
-  NavigationView {
-    VStack {
-      NavigationLink(
-        isActive: $navigationHelper.goToA,
+    NavigationView {
+      navigationStack.navigationLink(
+        customId: .a,
         destination: { BView() },
-        label: { EmptyView() }
-      )
-      
-      Button(
-        action: {
-          navigationHelper.goToA = true
-        },
-        label: {
-          Text("GO TO B")
-            .font(.largeTitle)
-        }
+        label: { Text("GO To B") }
       )
     }
   }
-}
+  
 }
