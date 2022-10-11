@@ -20,7 +20,16 @@ final class NavigationHelper: ObservableObject {
     bind()
   }
   
+  func popTo(viewID: ViewID) {
+    
+  }
+  
+  func popRoot() {
+    
+  }
+  
   // TODO: - 상위 depth로 pop하는 경우, 처리
+  // FIXME: - 아래와 같은 구조에서 만약 navigaiton Depth가 100d이면 10초가 걸리는 문제
   func bind() {
     $view1To
       .dropFirst()
@@ -29,8 +38,6 @@ final class NavigationHelper: ObservableObject {
       .receive(on: DispatchQueue.main)
       .sink { [weak self] _ in
         self?.view2To = false
-        self?.view3To = false
-        self?.view4To = false
       }.store(in: &cancellables)
     
     $view2To
