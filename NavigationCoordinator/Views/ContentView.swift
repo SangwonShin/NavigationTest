@@ -9,37 +9,47 @@ import Combine
 import SwiftUI
 
 final class NavigationHelper: ObservableObject {
-  @Published var view1To: Bool = false {
-    didSet {
-      print("Changed1 OldValue:", oldValue)
-      print("Changed1 NewValue:", self.view1To)
-    }
-  }
-  
-  @Published var view2To: Bool = false {
-    didSet {
-      print("Changed2 OldValue:", oldValue)
-      print("Changed2 NewValue:", self.view1To)
-    }
-  }
-  
-  @Published var view3To: Bool = false {
-    didSet {
-      print("Changed3 OldValue:", oldValue)
-      print("Changed3 NewValue:", self.view1To)
-    }
-  }
-  
-  @Published var view4To: Bool = false {
-    didSet {
-      print("Changed4 OldValue:", oldValue)
-      print("Changed4 NewValue:", self.view1To)
-    }
-  }
+  @Published var view1To: Bool = false
+  @Published var view2To: Bool = false
+  @Published var view3To: Bool = false
+  @Published var view4To: Bool = false
   
   private var cancellables = Set<AnyCancellable>()
   
   init() {
+    bind()
+  }
+  
+  // TODO: - 상위 depth로 pop하는 경우, 처리
+  func bind() {
+    $view1To
+      .dropFirst()
+      .filter { $0 == false }
+      .delay(for: 0.1, scheduler: DispatchQueue.global())
+      .receive(on: DispatchQueue.main)
+      .sink { [weak self] _ in
+        self?.view2To = false
+        self?.view3To = false
+        self?.view4To = false
+      }.store(in: &cancellables)
+    
+    $view2To
+      .dropFirst()
+      .filter { $0 == false }
+      .delay(for: 0.1, scheduler: DispatchQueue.global())
+      .receive(on: DispatchQueue.main)
+      .sink { [weak self] _ in
+        self?.view3To = false
+      }.store(in: &cancellables)
+    
+    $view3To
+      .dropFirst()
+      .filter { $0 == false }
+      .delay(for: 0.1, scheduler: DispatchQueue.global())
+      .receive(on: DispatchQueue.main)
+      .sink { [weak self] _ in
+        self?.view4To = false
+      }.store(in: &cancellables)
   }
 }
 
@@ -93,10 +103,7 @@ struct ContentView3: View {
       
       Button(
         action: {
-          DispatchQueue.main.async {
-            navigationHelper.view1To = false
-//            navigationHelper.view2To = false
-          }
+          navigationHelper.view1To = false
         }
       ){
         Text("Pop to root")
@@ -104,9 +111,7 @@ struct ContentView3: View {
       
       Button(
         action: {
-          DispatchQueue.main.async {
-            navigationHelper.view2To = false
-          }
+          navigationHelper.view2To = false
         }
       ){
         Text("Pop to prev")
@@ -126,14 +131,7 @@ struct ContentView4: View {
       
       Button(
         action: {
-          DispatchQueue.main.async {
-            print("1")
-            navigationHelper.view1To = false
-            print("2")
-            navigationHelper.view2To = false
-            print("3")
-            navigationHelper.view3To = false
-          }
+          navigationHelper.view1To = false
         }
       ){
         Text("Pop to root")
@@ -141,10 +139,7 @@ struct ContentView4: View {
       
       Button(
         action: {
-          DispatchQueue.main.async {
-            navigationHelper.view2To = false
-            navigationHelper.view3To = false
-          }
+          navigationHelper.view2To = false
         }
       ){
         Text("Pop to 2")
