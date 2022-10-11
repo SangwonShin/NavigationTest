@@ -10,17 +10,20 @@ import SwiftUI
 @main
 struct NavigationCoordinatorApp: App {
   var body: some Scene {
-    let navigaitonViewModel = NavigationStack<ViewID>()
     WindowGroup {
       AView()
-        .environmentObject(navigaitonViewModel)
     }
   }
 }
 
-enum ViewID: Equatable {
+enum ViewID: String {
   case a
   case b
   case c
   case d
+  case e
+  
+  var id: String {
+    return self.rawValue
+  }
 }

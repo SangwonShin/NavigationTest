@@ -7,37 +7,54 @@
 
 import SwiftUI
 
+import NavigationViewKit
+
+class CViewModel: ObservableObject {
+  init() {
+    print("CViewModel init")
+  }
+  
+  deinit {
+    print("CViewModel Deinit")
+  }
+}
+
 struct CView: View {
-  @EnvironmentObject
-  var navigationStack: NavigationStack<ViewID>
+  @Environment(\.navigationManager)
+  var naviManager
+  
+  @StateObject
+  var viewModel = CViewModel()
+  
+  init() {
+    print("CView init")
+  }
   
   var body: some View {
     VStack {
       Text("This is C")
         .font(.largeTitle)
       
-      navigationStack.navigationLink(
-        customId: .c,
-        destination: { DView() },
-        label: { Text("Go TO D") }
+      Button(
+        action: {
+          naviManager.wrappedValue.pushView(
+            tag: ViewID.c.id,
+            animated: true,
+            view: { DView() }
+          )
+        },
+        label: { Text("GO TO D") }
       )
       
       Button(
-        action: { navigationStack.popToRoot() },
+        action: {
+          naviManager.wrappedValue.popToRoot(tag: ViewID.a.id, animated: true)
+        },
         label: { Text("Pop to Root") }
       )
-      
-      Button(
-        action: { navigationStack.popToLast(customId: .b) },
-        label: { Text("Go Back To B") }
-      )
-      
-      Button(
-        action: { navigationStack.pop() },
-        label: { Text("pop") }
-      )
-
     }
-    
+    .navigationTitle("CView")
+    .navigationBarTitleDisplayMode(.inline)
+    .navigationViewManager(for: ViewID.c.id)
   }
 }

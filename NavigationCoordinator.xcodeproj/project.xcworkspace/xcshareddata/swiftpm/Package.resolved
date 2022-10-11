@@ -1,12 +1,21 @@
 {
   "pins" : [
     {
-      "identity" : "swiftui-navigation-stack",
+      "identity" : "navigationviewkit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/matteopuc/swiftui-navigation-stack.git",
+      "location" : "https://github.com/fatbobman/NavigationViewKit",
       "state" : {
-        "revision" : "bc6a8188a937e5da34d07117092131292f9ad9e8",
-        "version" : "1.0.5"
+        "revision" : "e7d286349da90f591091c53b58c2a2e0c6816585",
+        "version" : "0.0.5"
+      }
+    },
+    {
+      "identity" : "swiftui-introspect",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/siteline/SwiftUI-Introspect.git",
+      "state" : {
+        "revision" : "f2616860a41f9d9932da412a8978fec79c06fe24",
+        "version" : "0.1.4"
       }
     }
   ],

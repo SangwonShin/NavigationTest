@@ -1,5 +1,5 @@
 //
-//  DView.swift
+//  EView.swift
 //  NavigationCoordinator
 //
 //  Created by 신상원 on 2022/10/11.
@@ -9,7 +9,7 @@ import SwiftUI
 
 import NavigationViewKit
 
-class DViewModel: ObservableObject {
+class EViewModel: ObservableObject {
   init() {
     print("DViewModel init")
   }
@@ -19,7 +19,7 @@ class DViewModel: ObservableObject {
   }
 }
 
-struct DView: View {
+struct EView: View {
   @Environment(\.navigationManager)
   var naviManager
   
@@ -27,24 +27,13 @@ struct DView: View {
   var viewModel = DViewModel()
   
   init() {
-    print("DView init")
+    print("EView init")
   }
   
   var body: some View {
-    VStack(spacing: 18) {
-      Text("This is D")
+    VStack(spacing: 18){
+      Text("This is E")
         .font(.largeTitle)
-      
-      Button(
-        action: {
-          naviManager.wrappedValue.pushView(
-            tag: ViewID.d.id,
-            animated: true,
-            view: { EView() }
-          )
-        },
-        label: { Text("GO TO E") }
-      )
       
       Button(
         action: {
@@ -66,10 +55,19 @@ struct DView: View {
         },
         label: { Text("Pop to C") }
       )
+      
+      Button(
+        action: {
+          naviManager.wrappedValue.popToRoot(tag: ViewID.d.id, animated: true)
+//          naviManager.wrappedValue.delController(tag: ViewID.d.id)
+        },
+        label: { Text("Pop to D") }
+      )
     }
-    .navigationTitle("DView")
+    .navigationTitle("EView")
     .navigationBarTitleDisplayMode(.inline)
-    .navigationViewManager(for: ViewID.d.id)
+    .navigationViewManager(for: ViewID.e.id)
   }
 }
+
 

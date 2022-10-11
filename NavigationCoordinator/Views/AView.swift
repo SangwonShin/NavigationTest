@@ -7,20 +7,64 @@
 
 import SwiftUI
 
-import NavigationStack
+import NavigationViewKit
+
+class AViewModel: ObservableObject {
+  init() {
+    print("AViewModel init")
+  }
+  
+  deinit {
+    print("AViewModel Deinit")
+  }
+}
 
 struct AView: View {
-  @EnvironmentObject
-  var navigationStack: NavigationStack<ViewID>
+  @StateObject
+  var viewModel = AViewModel()
+  
+  @State
+  var goToB: Bool = false
+  
+  @Environment(\.navigationManager)
+  var naviManager
   
   var body: some View {
     NavigationView {
-      navigationStack.navigationLink(
-        customId: .a,
-        destination: { BView() },
-        label: { Text("GO To B") }
-      )
+      VStack {
+        NavigationLink(
+          isActive: $goToB,
+          destination: {
+            NavigationLazyView(BView(viewModel: BViewModel()))
+          },
+          label: { EmptyView() }
+        )
+
+        Button(
+          action: { goToB = true },
+          label: { Text("Go TO B") }
+        )
+        
+//        Button(
+//          action: {
+//            naviManager.wrappedValue.pushView(
+//              tag: ViewID.b.rawValue,
+//              animated: true,
+//              view: {
+////                NavigationLazyView(BView(viewModel: BViewModel()))
+//                BView(viewModel: BViewModel())
+//              }
+//            )
+//          },
+//          label: { Text("GO TO B") }
+//        )
+        
+      }
+      .navigationTitle("AView")
+      .navigationBarTitleDisplayMode(.inline)
+      
     }
+    .navigationViewManager(for: ViewID.a.id)
   }
   
 }
