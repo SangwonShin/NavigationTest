@@ -5,13 +5,42 @@
 //  Created by 신상원 on 2022/10/11.
 //
 
+import Combine
 import SwiftUI
 
 final class NavigationHelper: ObservableObject {
-  @Published var view1To: Bool = false
-  @Published var view2To: Bool = false
-  @Published var view3To: Bool = false
-  @Published var view4To: Bool = false
+  @Published var view1To: Bool = false {
+    didSet {
+      print("Changed1 OldValue:", oldValue)
+      print("Changed1 NewValue:", self.view1To)
+    }
+  }
+  
+  @Published var view2To: Bool = false {
+    didSet {
+      print("Changed2 OldValue:", oldValue)
+      print("Changed2 NewValue:", self.view1To)
+    }
+  }
+  
+  @Published var view3To: Bool = false {
+    didSet {
+      print("Changed3 OldValue:", oldValue)
+      print("Changed3 NewValue:", self.view1To)
+    }
+  }
+  
+  @Published var view4To: Bool = false {
+    didSet {
+      print("Changed4 OldValue:", oldValue)
+      print("Changed4 NewValue:", self.view1To)
+    }
+  }
+  
+  private var cancellables = Set<AnyCancellable>()
+  
+  init() {
+  }
 }
 
 struct ContentView: View {
@@ -60,19 +89,30 @@ struct ContentView3: View {
       ) {
         Text("Hello, World #3!")
       }
+      .isDetailLink(false)
       
       Button(
-        action: { navigationHelper.view1To = false }
+        action: {
+          DispatchQueue.main.async {
+            navigationHelper.view1To = false
+//            navigationHelper.view2To = false
+          }
+        }
       ){
         Text("Pop to root")
       }
       
       Button(
-        action: { navigationHelper.view2To = false }
+        action: {
+          DispatchQueue.main.async {
+            navigationHelper.view2To = false
+          }
+        }
       ){
         Text("Pop to prev")
       }
-    }.navigationBarTitle("Three")
+    }
+    .navigationBarTitle("Three")
   }
 }
 
@@ -86,10 +126,14 @@ struct ContentView4: View {
       
       Button(
         action: {
-          navigationHelper.view1To = false
-          navigationHelper.view2To = false
-          navigationHelper.view3To = false
-          
+          DispatchQueue.main.async {
+            print("1")
+            navigationHelper.view1To = false
+            print("2")
+            navigationHelper.view2To = false
+            print("3")
+            navigationHelper.view3To = false
+          }
         }
       ){
         Text("Pop to root")
@@ -97,13 +141,16 @@ struct ContentView4: View {
       
       Button(
         action: {
-          navigationHelper.view2To = false
-          navigationHelper.view3To = false
+          DispatchQueue.main.async {
+            navigationHelper.view2To = false
+            navigationHelper.view3To = false
+          }
         }
       ){
         Text("Pop to 2")
       }
-    }.navigationBarTitle("Four")
+    }
+    .navigationBarTitle("Four")
   }
 }
 

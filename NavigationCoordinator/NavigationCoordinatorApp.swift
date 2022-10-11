@@ -27,4 +27,8 @@ enum ViewID: String {
   var id: String {
     return self.rawValue
   }
+  
+  var active: Bool {
+    return false
+  }
 }
