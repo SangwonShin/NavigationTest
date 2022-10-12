@@ -16,19 +16,3 @@ struct NavigationCoordinatorApp: App {
     }
   }
 }
-
-enum ViewID: String {
-  case a
-  case b
-  case c
-  case d
-  case e
-  
-  var id: String {
-    return self.rawValue
-  }
-  
-  var active: Bool {
-    return false
-  }
-}
