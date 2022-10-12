@@ -12,7 +12,7 @@
 		AE0F4EC128EEC70D00E95CE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE0F4EC028EEC70D00E95CE4 /* Assets.xcassets */; };
 		AE0F4EC428EEC70D00E95CE4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE0F4EC328EEC70D00E95CE4 /* Preview Assets.xcassets */; };
 		AE827FDC28F50C1B0090F0D7 /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE827FDB28F50C1B0090F0D7 /* NavigationLazyView.swift */; };
-		AED782DA28F651840044DE9D /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED782D928F651840044DE9D /* NavigationHelper.swift */; };
+		AED7830A28F6C0E10044DE9D /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED7830928F6C0E10044DE9D /* NavigationCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +22,7 @@
 		AE0F4EC028EEC70D00E95CE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE0F4EC328EEC70D00E95CE4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AE827FDB28F50C1B0090F0D7 /* NavigationLazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLazyView.swift; sourceTree = "<group>"; };
-		AED782D928F651840044DE9D /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
+		AED7830928F6C0E10044DE9D /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +55,7 @@
 		AE0F4EBB28EEC70B00E95CE4 /* NavigationCoordinator */ = {
 			isa = PBXGroup;
 			children = (
-				AED782D928F651840044DE9D /* NavigationHelper.swift */,
+				AED7830928F6C0E10044DE9D /* NavigationCoordinator.swift */,
 				AE0F4EBC28EEC70B00E95CE4 /* NavigationCoordinatorApp.swift */,
 				AE827FDB28F50C1B0090F0D7 /* NavigationLazyView.swift */,
 				AE0F4ECA28EEC72600E95CE4 /* Views */,
@@ -156,8 +156,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE0F4EBD28EEC70B00E95CE4 /* NavigationCoordinatorApp.swift in Sources */,
-				AED782DA28F651840044DE9D /* NavigationHelper.swift in Sources */,
 				AE0678B828F5471C00839809 /* ContentView.swift in Sources */,
+				AED7830A28F6C0E10044DE9D /* NavigationCoordinator.swift in Sources */,
 				AE827FDC28F50C1B0090F0D7 /* NavigationLazyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

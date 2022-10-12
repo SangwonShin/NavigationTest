@@ -12,7 +12,6 @@ struct NavigationCoordinatorApp: App {
   var body: some Scene {
     WindowGroup {
       ContentView()
-        .environmentObject(NavigationHelper())
     }
   }
 }

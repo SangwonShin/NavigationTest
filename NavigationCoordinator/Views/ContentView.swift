@@ -9,58 +9,92 @@ import Combine
 import SwiftUI
 
 struct ContentView: View {
-  @EnvironmentObject
-  var navigationHelper: NavigationHelper
+  @StateObject
+  var coordinator = NavigationCoordinator.shared
+  
+  let viewID = "11"
   
   var body: some View {
     NavigationView {
-      NavigationLink(
-        isActive: $navigationHelper["1"].state ,
-        destination: { NavigationLazyView(ContentView2()) },
-        label: { Text("Hello, World!") }
-      )
-      .isDetailLink(false)
-      .navigationBarTitle("Root")
+      VStack {
+        // FIXME: - View 생명주기에 의해서 발생하는 문제
+        if coordinator.appendState(viewID: viewID) == false {
+          NavigationLink(
+            isActive: $coordinator[viewID].state,
+            destination: { NavigationLazyView(ContentView2()) },
+            label: { EmptyView() }
+          ).isDetailLink(false)
+        }
+        
+        Button(
+          action: { coordinator[viewID].state = true },
+          label: { Text("GO TO B") }
+        )
+      }
+      .navigationTitle("A")
     }
   }
 }
 
 struct ContentView2: View {
-  @EnvironmentObject
-  var navigationHelper: NavigationHelper
+  @StateObject
+  var coordinator = NavigationCoordinator.shared
+  
+  let viewID = "22"
   
   var body: some View {
-    NavigationLink(
-      isActive: $navigationHelper["2"].state ,
-      destination: { NavigationLazyView(ContentView3()) },
-      label: { Text("Hello, World #2!") }
-    )
-    .isDetailLink(false)
-    .navigationBarTitle("Two")
+    VStack {
+      if coordinator.appendState(viewID: viewID) == false {
+        NavigationLink(
+          isActive: $coordinator[viewID].state,
+          destination: { NavigationLazyView(ContentView3()) },
+          label: { EmptyView() }
+        ).isDetailLink(false)
+      }
+      
+      Button(
+        action: { coordinator[viewID].state = true },
+        label: { Text("GO TO C") }
+      )
+      
+      Button(
+        action: { coordinator.pop(viewID: viewID) } ,
+        label: { Text("GO Prev") }
+      )
+    }
+    .navigationBarTitle("B")
   }
 }
 
 struct ContentView3: View {
-  @EnvironmentObject
-  var navigationHelper: NavigationHelper
+  @StateObject
+  var coordinator = NavigationCoordinator.shared
+  
+  let viewID = "33"
   
   var body: some View {
     VStack {
-      NavigationLink(
-        isActive: $navigationHelper["3"].state ,
-        destination: { NavigationLazyView(ContentView4()) },
-        label: { Text("Hello, World #3!") }
-      )
-      .isDetailLink(false)
+      if coordinator.appendState(viewID: viewID) == false {
+        NavigationLink(
+          isActive: $coordinator[viewID].state,
+          destination: { NavigationLazyView(ContentView4()) },
+          label: { EmptyView() }
+        ).isDetailLink(false)
+      }
       
       Button(
-        action: { navigationHelper.popRoot() }
+        action: { coordinator[viewID].state = true },
+        label: { Text("GO TO D") }
+      )
+      
+      Button(
+        action: { coordinator.popRoot() }
       ){
         Text("Pop to root")
       }
       
       Button(
-        action: { navigationHelper.pop(viewID: "3", 1) }
+        action: { coordinator.pop(viewID: viewID) }
       ){
         Text("Pop to prev")
       }
@@ -70,26 +104,31 @@ struct ContentView3: View {
 }
 
 struct ContentView4: View {
-  @EnvironmentObject
-  var navigationHelper: NavigationHelper
+  @StateObject
+  var coordinator = NavigationCoordinator.shared
+  
+  let viewID = "44"
   
   var body: some View {
     VStack {
       Text("Hello, World #4!")
       
       Button(
-        action: { navigationHelper.popRoot() }
+        action: { coordinator.popRoot() }
       ){
         Text("Pop to root")
       }
       
       Button(
-        action: { navigationHelper.pop(viewID: "4", 2) }
+        action: { coordinator.pop(viewID: viewID, 2) }
       ){
         Text("Pop to 2")
       }
     }
     .navigationBarTitle("Four")
+    .onAppear {
+      let _ = coordinator.appendState(viewID: viewID)
+    } // MARK: - navigationLink가 없는 경우
   }
 }
 
